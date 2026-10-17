@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跳转中…</title>
+
+<!-- 告诉搜索引擎:真正的内容在目标网站 -->
+<link rel="canonical" href="https://example.com">
+<meta name="robots" content="noindex,follow">
+
+<script>
+  /* ============================================================
+     ★ 你唯一要改的地方,就是下面引号里的网址 ★
+
+     把 https://example.com 换成你要跳过去的网站。
+     注意两点:
+       1. 必须带 https:// 开头
+       2. 结尾不要加斜杠 /
+     ============================================================ */
+  var TARGET = "https://example.com";
+
+  // 把原地址尾部的参数(?id=123)和锚点(#top)一起带过去,不丢
+  var full = TARGET + window.location.search + window.location.hash;
+
+  // 用 replace 而不是 assign:不留历史记录,用户按"后退"不会卡在跳转页
+  window.location.replace(full);
+</script>
+
+<noscript>
+  <!-- 极少数关闭了 JS 的浏览器走这条 -->
+  <meta http-equiv="refresh" content="0; url=https://example.com">
+</noscript>
+
+<style>
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;
+       align-items:center;justify-content:center;gap:14px;
+       font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+       color:#333;background:#fafafa}
+  .spinner{width:28px;height:28px;border:3px solid #ddd;border-top-color:#4a7dff;
+           border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  p{margin:0;font-size:15px}
+  a{color:#4a7dff}
+</style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <p>正在跳转…</p>
+  <p><a href="https://example.com">如果 3 秒后没有反应,请点这里</a></p>
+</body>
+</html>
