@@ -3,33 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>跳转中…</title>
+<title>正在前往西南科技大学…</title>
 
 <!-- 告诉搜索引擎:真正的内容在目标网站 -->
-<link rel="canonical" href="https://example.com">
+<link rel="canonical" href="https://www.swust.edu.cn">
 <meta name="robots" content="noindex,follow">
 
 <script>
   /* ============================================================
-     ★ 你唯一要改的地方,就是下面引号里的网址 ★
-
-     把 https://example.com 换成你要跳过去的网站。
-     注意两点:
-       1. 必须带 https:// 开头
-       2. 结尾不要加斜杠 /
+     目标网址:https://www.swust.edu.cn
+     以后想换目标,全文搜索 "https://www.swust.edu.cn" 替换成新网址,
+     共 4 处,改完保存即可。
      ============================================================ */
-  var TARGET = "https://example.com";
+  var TARGET = "https://www.swust.edu.cn";
 
-  // 把原地址尾部的参数(?id=123)和锚点(#top)一起带过去,不丢
+  // 带上原地址尾部的参数(?id=123)和锚点(#top),不丢
   var full = TARGET + window.location.search + window.location.hash;
 
-  // 用 replace 而不是 assign:不留历史记录,用户按"后退"不会卡在跳转页
+  // replace 而不是 assign:不留历史记录,按"后退"不会卡在跳转页
   window.location.replace(full);
 </script>
 
 <noscript>
-  <!-- 极少数关闭了 JS 的浏览器走这条 -->
-  <meta http-equiv="refresh" content="0; url=https://example.com">
+  <meta http-equiv="refresh" content="0; url=https://www.swust.edu.cn">
 </noscript>
 
 <style>
@@ -46,7 +42,7 @@
 </head>
 <body>
   <div class="spinner"></div>
-  <p>正在跳转…</p>
-  <p><a href="https://example.com">如果 3 秒后没有反应,请点这里</a></p>
+  <p>正在前往西南科技大学…</p>
+  <p><a href="https://www.swust.edu.cn">如果 3 秒后没有反应,请点这里</a></p>
 </body>
 </html>
